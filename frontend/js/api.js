@@ -2,7 +2,7 @@
 
 function del(id)
 {
-    fetch(`http://127.0.0.1:8000/api/students/${id}/delete`,{
+    fetch(`http://3.27.124.160/api/students/${id}/delete`,{
         method: 'delete'
     })
     .then(res => res.json())
@@ -62,7 +62,7 @@ editForm.addEventListener('submit', async function (e) {
     };
     console.log(data);
     record=JSON.stringify(data)
-    let response = await fetch(`http://127.0.0.1:8000/api/students/${data.id}/edit`, {
+    let response = await fetch(`http://3.27.124.160/api/students/${data.id}/edit`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',
@@ -81,7 +81,7 @@ editForm.addEventListener('submit', async function (e) {
 function edit(id)
 {
     const api_url = 
-    `http://127.0.0.1:8000/api/students/${id}/edit`; 
+    `http://3.27.124.160/api/students/${id}/edit`; 
     // Calling that async function
     getapi(api_url);
 }
@@ -101,7 +101,7 @@ thisForm.addEventListener('submit', async function (e) {
         phone  : thisForm.phone.value
     };
     record=JSON.stringify(data)
-    let response = await fetch('http://127.0.0.1:8000/api/students/', {
+    let response = await fetch('http://3.27.124.160/api/students/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -172,6 +172,6 @@ function error(err) {
 var xhr = new XMLHttpRequest(); //invoke a new instance of the XMLHttpRequest
 xhr.onload = success; // call success function if request is successful
 xhr.onerror = error;  // call error function if request failed
-xhr.open('GET', 'http://127.0.0.1:8000/api/students/'); // open a GET request
+xhr.open('GET', 'http://3.27.124.160/api/students'); // open a GET request
 xhr.send(); // send the request to the server.
 //myModal.hide()
